@@ -1,0 +1,13 @@
+[project]
+name = "greetings"
+version = "1.0"
+description = "A simple greeting CLI tool"
+authors = [{ name = "Louis Seignobos", email = "louis.seignobos@akkodis.com" }]
+requires-python = ">=3.8"
+dependencies = [
+    "typer>=0.12.3",
+    "typing_extensions>=4.0.0",
+]
+
+[project.scripts]
+greet = "cli.main:app"
