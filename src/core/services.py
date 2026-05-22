@@ -1,4 +1,4 @@
-from greetings.src.core.models import StrictGreetRequest
+from core.models import StrictGreetRequest
 
 def build_greeting(request: StrictGreetRequest) -> str:
     greeting = "Greetings, "

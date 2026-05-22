@@ -1,6 +1,8 @@
 import typer
 from typing_extensions import Annotated
 from core.services import build_greeting
+from core.models import StrictGreetRequest
+
 
 app = typer.Typer()
 
@@ -23,7 +25,13 @@ def greet(
         typer.Option(help="Number of times to greet the person")
     ] = 1,
 ):
-    message = build_greeting(name, title, doctor, count)
+    request = StrictGreetRequest(
+        name=name,
+        title=title,
+        is_doctor=doctor,
+        count=count,
+    )
+    message = build_greeting(request)
     print(message)
 
 if __name__ == "__main__":
