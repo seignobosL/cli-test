@@ -7,4 +7,4 @@ class StrictGreetRequest(BaseModel):
 
     is_doctor: bool = False
 
-    title: str = Field(default="", regex=r"^(Dr\.|M\.|Mme|)$")
+    title: str = Field(default="", pattern=r"^(Dr\.|M\.|Mme|)$")
