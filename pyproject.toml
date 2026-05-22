@@ -1,6 +1,6 @@
 [project]
 name = "greetings"
-version = "1.0"
+version = "0.1.0"
 description = "A simple greeting CLI tool"
 authors = [{ name = "Louis Seignobos", email = "louis.seignobos@akkodis.com" }]
 requires-python = ">=3.8"
