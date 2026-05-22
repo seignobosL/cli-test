@@ -1,10 +1,9 @@
-from pydantic import BaseModel, Field, conint, constr
+from pydantic import BaseModel, ConfigDict, Field, conint, constr
 
 class StrictGreetRequest(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+
     name: constr(min_length=0, max_length=50) = ""
-
     count: conint(ge=1, le=10) = 1
-
     is_doctor: bool = False
-
     title: str = Field(default="", pattern=r"^(Dr\.|M\.|Mme|)$")
