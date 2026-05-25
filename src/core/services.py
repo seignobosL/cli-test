@@ -1,15 +1,16 @@
-from core.models import CLIStarterTemplate
+from core.models import ServiceRequestBodyExample
 
-def build_greeting(request: CLIStarterTemplate) -> str:
+
+def core_service_call(requestBody: ServiceRequestBodyExample) -> str:
     greeting = "Greetings, "
-    title = request.title
-    name = request.name
+    title = requestBody.title
+    name = requestBody.name
 
-    if request.is_doctor and not title:
+    if requestBody.is_doctor and not title:
         title = "Dr."
     if not name:
         name = title.lower().rstrip(".") if title else "friend"
     if title:
         greeting += f"{title} "
     greeting += f"{name}!"
-    return "\n".join([greeting] * request.count)
+    return "\n".join([greeting] * requestBody.count)
