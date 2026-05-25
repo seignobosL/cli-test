@@ -1,6 +1,6 @@
-from core.models import StrictGreetRequest
+from core.models import CLIStarterTemplate
 
-def build_greeting(request: StrictGreetRequest) -> str:
+def build_greeting(request: CLIStarterTemplate) -> str:
     greeting = "Greetings, "
     title = request.title
     name = request.name

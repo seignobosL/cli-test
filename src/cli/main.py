@@ -1,7 +1,7 @@
 import typer
 from typing_extensions import Annotated
 from core.services import build_greeting
-from core.models import StrictGreetRequest
+from core.models import CLIStarterTemplate
 
 
 app = typer.Typer()
@@ -25,7 +25,7 @@ def greet(
         typer.Option(help="Number of times to greet the person")
     ] = 1,
 ):
-    request = StrictGreetRequest(
+    request = CLIStarterTemplate(
         name=name,
         title=title,
         is_doctor=doctor,
